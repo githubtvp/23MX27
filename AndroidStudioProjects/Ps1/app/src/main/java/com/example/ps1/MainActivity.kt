@@ -22,6 +22,6 @@ class MainActivity : AppCompatActivity() {
 
     fun btn1Clk(n : Int)
     {
-        if
+
     }
 }
