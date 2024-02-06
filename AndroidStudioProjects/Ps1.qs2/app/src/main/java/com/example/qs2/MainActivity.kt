@@ -1,67 +1,78 @@
 package com.example.qs2
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val txtV4 = findViewById<TextView>(R.id.txtV4)
+        txtV4.visibility = View.GONE
         val btn = findViewById<Button>(R.id.btn1)
-        btn.setOnClickListener({ onBtnClk(btn)})
+        btn.setOnClickListener({ onBtnClk(btn) })
     }
 
-    fun onBtnClk(btn : Button)
-    {
+    fun onBtnClk(btn: Button) {
         //btn.text = "Done Calculations"
-        val txtIp1 = findViewById<TextView>(R.id.txtIp1)
-        val txtIp2 = findViewById<TextView>(R.id.txtIp2)
-        var ip1Str: String = txtIp1.getText().toString().trim()
-        var ip2Str: String = txtIp2.getText().toString().trim()
+        val edTxt1 = findViewById<TextView>(R.id.edTxt1)
+        val edTxt2 = findViewById<TextView>(R.id.edTxt2)
+        var ip1Str: String = edTxt1.getText().toString().trim()
+        var ip2Str: String = edTxt2.getText().toString().trim()
+        val txtV4 = findViewById<TextView>(R.id.txtV4)
+        txtV4.visibility = View.GONE
         if (!ip1Str.isEmpty()) {
-            // Input is not blank. Now, try to parse it as an integer
+            // Input not blank, parse it as an double
             try {
-                val f: Int = ip1Str.toInt()
-                // If parsing is successful, it's an integer
-                // Your logic for handling the integer value goes here
-                FahrToCel(f, txtIp2, btn)
+                val f: Double = ip1Str.toDouble()
+                FahrToCel(f, edTxt2, btn)
             } catch (e: NumberFormatException) {
-                // If parsing fails, it's not an integer
-                // Handle the case where it's not an integer
             }
         } else {
-            // Input is blank
             // Handle the case where the input is blank
         }
         if (!ip2Str.isEmpty()) {
-            // Input is not blank. Now, try to parse it as an integer
+            // Input not blank, parse it as an double
             try {
-                val c: Int = ip2Str.toInt()
-                // If parsing is successful, it's an integer
-                // Your logic for handling the integer value goes here
-                CelToFahr(c, txtIp1, btn)
+                val c: Double = ip2Str.toDouble()
+                CelToFahr(c, edTxt1, btn)
             } catch (e: NumberFormatException) {
-                // If parsing fails, it's not an integer
-                // Handle the case where it's not an integer
+                // Handle the case the input is blank
             }
-        } else {
-            // Input is blank
-            // Handle the case where the input is blank
+        } else if ( ip1Str.isEmpty()  && ip2Str.isEmpty()  ){
+            var msg = "Please enter some suitable values to convert"
+            fun1(msg)
+          //  btn.setOnClickListener({ onBtnClk(btn) })// Handle the case where the input is blank
         }
     }
 
-    fun FahrToCel(f : Int, txtV: TextView, btn :Button)
-    {
-        var c = (f - 32)*5/9
-        txtV.text = c.toString()
-        btn.text = "Done : Fahrenhite to Celsius"
+    fun FahrToCel(f: Double, txtV: TextView, btn: Button) {
+        var c = (f - 32) * 5 / 9
+        var cRd = String.format("%.2f", c)
+        txtV.text = cRd
+        btn.text = "Done : Fahrenheit to Celsius"
+        var msg = "$f fahrenheit is $cRd celsius"
+        fun1(msg)
     }
-     fun CelToFahr(c : Int, txtV: TextView, btn :Button)
-     {
-         var f = (c * 9 / 5) + 32
-         txtV.text = f.toString()
-         btn.text = "Done : Celsius to Fahrenhite"
-     }
+
+    fun CelToFahr(c: Double, txtV: TextView, btn: Button) {
+        var f = (c * 9 / 5) + 32
+        var fRd = String.format("%.2f", f)
+        txtV.text = fRd
+        btn.text = "Done : Celsius to Fahrenheit"
+        var msg = "$c celsius is $fRd fahrenheit"
+        fun1(msg)
+    }
+
+    fun fun1(str: String) {
+        val txtV4 = findViewById<TextView>(R.id.txtV4)
+        txtV4.visibility = View.VISIBLE
+        txtV4.text = str
+        Toast.makeText(applicationContext, str, Toast.LENGTH_SHORT).show()
+    }
 }

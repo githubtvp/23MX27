@@ -18,6 +18,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
 
     <TextView
         android:id="@+id/txtV2"
@@ -29,23 +32,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-
+    <EditText
+        android:id="@+id/edTxt1"
         android:layout_width="230dp"
-        android:layout_height="62dp">
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtIp1"
-            android:layout_width="203dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif"
-            android:hint="Fahrenheit"
-            android:textAlignment="inherit"
-            android:textColorLink="#CC3636"
-            android:textSize="40dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
 
     <TextView
         android:id="@+id/txtV3"
@@ -54,24 +55,31 @@
         android:text="Enter Celsius Temp below"
         android:textSize="16sp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="293dp"
-        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/edTxt2"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtIp2"
-            android:layout_width="283dp"
-            android:layout_height="62dp"
-            android:hint="Celsius"
-            android:textAlignment="center"
-            android:textColorLink="#FF9800"
-            android:textSize="40dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="220dp"
         android:layout_height="77dp"
-        android:text="Calculate" />
+        android:text="Convert temperature" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/txtV4"
+        android:layout_width="232dp"
+        android:layout_height="47dp"
+        android:text="TextView" />
 
 </LinearLayout>
