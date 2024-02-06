@@ -1,0 +1,21 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btn1
+id edTxt1
+id edTxt2
+id txtV1
+id txtV2
+id txtV3
+id txtV4
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Qs2
+style Theme.Qs2
+xml backup_rules
+xml data_extraction_rules
