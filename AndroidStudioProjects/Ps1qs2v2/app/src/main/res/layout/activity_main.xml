@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtV1"
+        android:layout_width="232dp"
+        android:layout_height="46dp"
+        android:text="My Temperature converter"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:id="@+id/txtV2"
+        android:layout_width="239dp"
+        android:layout_height="47dp"
+        android:text="Enter Fahrenheit Temp below"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <EditText
+        android:id="@+id/edTxt1"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        <requestFocus/>
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+
+    <TextView
+        android:id="@+id/txtV3"
+        android:layout_width="239dp"
+        android:layout_height="47dp"
+        android:text="Enter Celsius Temp below"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/edTxt2"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="220dp"
+        android:layout_height="77dp"
+        android:text="Convert temperature" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/txtV4"
+        android:layout_width="232dp"
+        android:layout_height="47dp"
+        android:text="TextView" />
+
+</LinearLayout>
