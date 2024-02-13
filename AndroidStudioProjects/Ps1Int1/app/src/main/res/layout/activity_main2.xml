@@ -9,13 +9,15 @@
 
     <TextView
         android:id="@+id/txtV2"
-        android:layout_width="91dp"
-        android:layout_height="41dp"
-        android:text="Click me to change size"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:text="Change my size"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="21dp"
         tools:layout_editor_absoluteY="228dp" />
-
+<Space
+    android:layout_width="wrap_content"
+    android:layout_height="20dp" />
     <TextView
         android:id="@+id/txtV3"
         android:layout_width="wrap_content"
@@ -23,4 +25,7 @@
         android:layout_weight="1"
         android:text="ClickMeToTest"
         android:textSize="24sp" />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
 </LinearLayout>

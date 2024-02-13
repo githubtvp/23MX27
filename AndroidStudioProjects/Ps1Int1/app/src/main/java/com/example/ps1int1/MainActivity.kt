@@ -15,18 +15,26 @@ class MainActivity : AppCompatActivity() {
         btn1.setOnClickListener(View.OnClickListener{onClkBtn1()})
         val btn2 = findViewById<Button>(R.id.btn2)
         btn2.setOnClickListener(View.OnClickListener{onClkBtn2()})
+        val btn3 = findViewById<Button>(R.id.btn3)
+        btn3.setOnClickListener(View.OnClickListener{onClkBtn3()})
     }
-
     fun onClkBtn1()
-    {
-        val i = Intent(this, MainActivity2::class.java)
-        startActivity(i)
-    }
-
-    fun onClkBtn2()
     {
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse("http://www.psgtech.edu/")
         startActivity(i)
     }
+    fun onClkBtn2()
+    {
+        val i = Intent(this, MainActivity2::class.java)
+        startActivity(i)
+    }
+
+    fun onClkBtn3()
+    {
+        val i = Intent(this, MainActivity3::class.java)
+        startActivity(i)
+    }
+
+
 }
