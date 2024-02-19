@@ -8,19 +8,21 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="182dp"
+        android:layout_height="192dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="211dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="129dp"
-        android:text="The document that are displayed on the left side of the navigation , detailed how to build an app using a variety of Android API are tested." />
+        android:layout_marginBottom="124dp"
+        android:text="The document that are displayed on the left side of the navigation , detailed how to build an app using a variety of Android API are tested."
+        android:textAlignment="viewStart"
+        android:textSize="10sp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="148dp"
         android:layout_height="45dp"
         android:layout_alignParentEnd="true"
@@ -33,7 +35,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -63,7 +65,7 @@
         app:srcCompat="@drawable/smil3" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView4"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -78,7 +80,7 @@
         android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView5"
         android:layout_width="356dp"
         android:layout_height="193dp"
         android:layout_alignWithParentIfMissing="true"
@@ -102,17 +104,18 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="186dp"
+        android:layout_height="196dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="51dp"
         android:layout_marginEnd="210dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="121dp"
         android:text="Android is innovative apps and games for the mobile terminal van be built in the Java language environment provides an application framework that fulfilling "
-        android:textAlignment="textStart" />
+        android:textAlignment="viewStart"
+        android:textSize="10sp" />
 
     <Button
         android:id="@+id/button"
@@ -124,6 +127,6 @@
         android:layout_marginStart="106dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="53dp"
-        android:text="Button"
+        android:text="Register"
         app:cornerRadius="8dp" />
 </RelativeLayout>
