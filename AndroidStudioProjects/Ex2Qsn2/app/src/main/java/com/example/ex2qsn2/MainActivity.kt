@@ -52,24 +52,42 @@ class MainActivity : AppCompatActivity() {
 
         s1.setOnClickListener {
             resetStarColors(s1, msg1)
+            resetStarColors(s2, msg1)
+            resetStarColors(s3, msg1)
+            resetStarColors(s4, msg1)
+            resetStarColors(s5, msg1)
             onStarClk(s1)
             msg1.text = "Disappointed : Very Poor"
         }
+
+
         s2.setOnClickListener {
+            resetStarColors(s1, msg1)
             resetStarColors(s2, msg1)
+            resetStarColors(s3, msg1)
+            resetStarColors(s4, msg1)
+            resetStarColors(s5, msg1)
             onStarClk(s1)
             onStarClk(s2)
             msg1.text = "Not Good : Need improvement"
         }
         s3.setOnClickListener {
+            resetStarColors(s1, msg1)
+            resetStarColors(s2, msg1)
             resetStarColors(s3, msg1)
+            resetStarColors(s4, msg1)
+            resetStarColors(s5, msg1)
             onStarClk(s1)
             onStarClk(s2)
             onStarClk(s3)
             msg1.text = "Satisfied"
         }
         s4.setOnClickListener {
+            resetStarColors(s1, msg1)
+            resetStarColors(s2, msg1)
+            resetStarColors(s3, msg1)
             resetStarColors(s4, msg1)
+            resetStarColors(s5, msg1)
             onStarClk(s1)
             onStarClk(s2)
             onStarClk(s3)
@@ -77,6 +95,10 @@ class MainActivity : AppCompatActivity() {
             msg1.text = "Good : I enjoyed it"
         }
         s5.setOnClickListener {
+            resetStarColors(s1, msg1)
+            resetStarColors(s2, msg1)
+            resetStarColors(s3, msg1)
+            resetStarColors(s4, msg1)
             resetStarColors(s5, msg1)
             onStarClk(s1)
             onStarClk(s2)
@@ -86,18 +108,14 @@ class MainActivity : AppCompatActivity() {
             msg1.text = "Awesome : I love it"
         }
         btn1.setOnClickListener{ onClkBtn1(mlTxt) }
-
     }
-
     fun resetStarColors(s: ImageView, msg1: TextView) {
         s.setColorFilter(null)
         msg1.text = ""
     }
-
     fun onStarClk(s: ImageView) {
         s.setColorFilter(Color.YELLOW)
     }
-
     fun onClkBtn1(mlTxt : EditText) {
         val i = Intent(this, MainActivity2::class.java)
         val textToPass = mlTxt.text.toString()
