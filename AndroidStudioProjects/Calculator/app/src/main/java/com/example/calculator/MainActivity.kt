@@ -2,152 +2,117 @@ package com.example.calculator
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Stack
+import java.lang.ArithmeticException
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class MainActivity : AppCompatActivity() {
+    enum class OpKind {
+        ADD, SUBTRACT, MULTIPLY, DIVIDE
+    }
+
+    companion object {
+        fun OpKind.compute(a: BigDecimal, b: BigDecimal) = when (this) {
+            OpKind.ADD -> a + b
+            OpKind.SUBTRACT -> a - b
+            OpKind.MULTIPLY -> a * b
+            OpKind.DIVIDE -> a.divide(b, 10, RoundingMode.HALF_EVEN)
+        }
+    }
+
+    private val txtResult by lazy {findViewById<TextView>(R.id.txtResult)}
+    private var lastResult: BigDecimal = BigDecimal.ZERO
+    private var lastOp: OpKind? = null
+    private var waitingNextOperand: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val editText1 = findViewById<EditText>(R.id.editText1)
-        val btns = listOf<Button>(
-            findViewById(R.id.btn1),
-            findViewById(R.id.btn2),
-            findViewById(R.id.btn3),
-            findViewById(R.id.btn4),
-            findViewById(R.id.btn5),
-            findViewById(R.id.btn6),
-            findViewById(R.id.btn7),
-            findViewById(R.id.btn8),
-            findViewById(R.id.btn9),
-            findViewById(R.id.btn10),
-            findViewById(R.id.btn11),
-            findViewById(R.id.btn12),
-            findViewById(R.id.btn13),
-            findViewById(R.id.btn14),
-            findViewById(R.id.btn15),
-            findViewById(R.id.btn16),
-            findViewById(R.id.btn17)
-        )
-
-        for (btn in btns) {
-            btn.setOnClickListener {
-                val btnTxt = btn.getText().toString()
-                var dataCalc = " "; // = editText1.getText().toString() + btnTxt
-                // editText1.setText(dataCalc)
-                if (btnTxt == "C") {
-                    clearEntry(editText1)
-                } else {
-                    dataCalc = editText1.getText().toString() + btnTxt
-                    editText1.setText(dataCalc)
-                }
-                if (btnTxt == "=") {
-                    clearEntry(editText1)
-                    dataCalc = editText1.getText().toString()
-                    var result = evaluateExpression(dataCalc)
-                    editText1.setText(result.toString())
-                }
+        findViewById<Button>(R.id.btn0).setOnClickListener { appendText("0") }
+        findViewById<Button>(R.id.btn1).setOnClickListener { appendText("1") }
+        findViewById<Button>(R.id.btn2).setOnClickListener { appendText("2") }
+        findViewById<Button>(R.id.btn3).setOnClickListener { appendText("3") }
+        findViewById<Button>(R.id.btn4).setOnClickListener { appendText("4") }
+        findViewById<Button>(R.id.btn5).setOnClickListener { appendText("5") }
+        findViewById<Button>(R.id.btn6).setOnClickListener { appendText("6") }
+        findViewById<Button>(R.id.btn7).setOnClickListener { appendText("7") }
+        findViewById<Button>(R.id.btn8).setOnClickListener { appendText("8") }
+        findViewById<Button>(R.id.btn9).setOnClickListener { appendText("9") }
+        findViewById<Button>(R.id.btnPoint).setOnClickListener { appendText(".") }
+        findViewById<Button>(R.id.btnSign).setOnClickListener {
+            val currentText = txtResult.text.toString()
+            txtResult.text = when {
+                currentText.startWith("-") -> currentText.substring(1, currentText.length)
+                currentText != "0" -> "-$currentText"
+                else -> return@setOnClickListener
             }
         }
-    }
-}
-
-fun evaluateExpression(expression: String): Double {
-    val tokens = tokenize(expression)
-    val postfix = infixToPostfix(tokens)
-    return evaluatePostfix(postfix)
-}
-
-fun tokenize(expression: String): List<String> {
-    // Split the expression into tokens (numbers, operators, etc.)
-    return expression.split(" ")
-}
-
-fun infixToPostfix(infix: List<String>): List<String> {
-    val output = mutableListOf<String>()
-    val stack = mutableListOf<String>()
-
-    for (token in infix) {
-        when {
-            token.isNumeric() -> output.add(token)
-            token == "(" -> stack.add(token)
-            token == ")" -> {
-                while (stack.isNotEmpty() && stack.last() != "(") {
-                    output.add(stack.removeAt(stack.size - 1))
-                }
-                stack.removeAt(stack.size - 1) // Remove '('
-            }
-            else -> {
-                while (stack.isNotEmpty() && precedence(token) <= precedence(stack.last())) {
-                    output.add(stack.removeAt(stack.size - 1))
-                }
-                stack.add(token)
-            }
+        findViewById<Button>(R.id.btnBackSpace).setOnClickListener {
+            val currentText = txtResult.text.toString()
+            val newText = currentText.substring(0, currentText.length - 1)
+            txtResult.text = if (newText.isEmpty() || newText == "-") "0" else newText
         }
-    }
-
-    while (stack.isNotEmpty()) {
-        output.add(stack.removeAt(stack.size - 1))
-    }
-
-    return output
-}
-
-fun precedence(operator: String): Int {
-    return when (operator) {
-        "+", "-" -> 1
-        "*", "/" -> 2
-        else -> 0
-    }
-}
-fun precedence(operator: Char): Int {
-    return when (operator) {
-        '+', '-' -> 1
-        '*', '/' -> 2
-        else -> 0
-    }
-}
-
-fun evaluatePostfix(postfix: List<String>): Double {
-    // Evaluate the postfix expression using a stack-based algorithm
-    // You need to implement a stack-based algorithm to evaluate the postfix expression
-    // For simplicity, let's assume the expression contains only two operands and one operator
-    val stack = Stack<Double>()
-    for (token in postfix) {
-        if (token.isNumeric()) {
-            stack.push(token.toDouble())
-        } else {
-            val operand2 = stack.pop()
-            val operand1 = stack.pop()
-            when (token) {
-                "+" -> stack.push(operand1 + operand2)
-                "-" -> stack.push(operand1 - operand2)
-                "*" -> stack.push(operand1 * operand2)
-                "/" -> stack.push(operand1 / operand2)
-                else -> throw IllegalArgumentException("Invalid operator")
-            }
+        findViewById<Button>(R.id.btnClear).setOnClickListener {
+            clearText()
         }
+        findViewById<Button>(R.id.btnPlus).setOnClickListener {
+            calc(OpKind.ADD)
+        }
+        findViewById<Button>(R.id.btnMinus).setOnClickListener {
+            calc(OpKind.SUBTRACT)
+        }
+        findViewById<Button>(R.id.btnTimes).setOnClickListener {
+            calc(OpKind.MULTIPLY)
+        }
+        findViewById<Button>(R.id.btnDivide).setOnClickListener {
+            calc(OpKind.DIVIDE)
+        }
+        findViewById<Button>(R.id.btnCalc).setOnClickListener {
+            calc(null)
+        }
+        clearText()
     }
-    return stack.pop()
-}
+    private fun clearText() {
+        txtResult.text = "0"
+    }
 
-fun String.isNumeric(): Boolean {
-    return try {
-        this.toDouble()
-        true
-    } catch (e: NumberFormatException) {
-        false
+    private fun appendText(text: String) {
+        if (waitingNextOperand) {
+            clearText()
+            waitingNextOperand = false
+        }
+        val currentText = txtResult.text.toString()
+        txtResult.text = if (currentText == "0") text else currentText + text
+    }
+
+    private fun calc(nextOp : OpKind){
+        if(waitingNextOperand){
+            lastOp = nextOp
+            return
+        }
+        val currentValue = BigDecimal(txtResult.text.toString())
+        val nextValue = try{
+            lastOp?.compute(lastResult, currentValue) ?: currentValue
+        } catch (e: ArithmeticException){
+            lastOp = null
+            waitingNextOperand = true
+            Toast.makeText(
+                applicationContext, "Invalid operation", Toast.LENGTH_SHORT).show()
+            return
+            )
+        }
+
+        if(nextOp != null){
+            lastResult = newValue
+        }
+        if(lastOp!= null)
+        {
+            txtResult.text = newValue.toPlainString()
+        }
+        lastOp = nextOp
+        waitingNextOperand = nextOp != null
     }
 }
-
-private fun Double.isWholeNumber(): Boolean {
-    return this % 1 == 0.0
-}
-
-fun clearEntry(edtTxt: EditText) {
-    var str = edtTxt.getText().toString()
-    str = str.substring(0, str.length - 1)
-    edtTxt.setText(str);
-}
-
