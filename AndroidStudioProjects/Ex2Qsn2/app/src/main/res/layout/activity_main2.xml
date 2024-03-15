@@ -7,7 +7,7 @@
     tools:context=".MainActivity2">
 
     <TextView
-        android:id="@+id/txtView21"
+        android:id="@+id/txtView2"
         android:layout_width="270dp"
         android:layout_height="189dp"
         android:layout_marginTop="228dp"
@@ -27,5 +27,5 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView21" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

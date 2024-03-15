@@ -11,7 +11,7 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        val txtV1 = findViewById<TextView>(R.id.txtView21)
+        val txtV1 = findViewById<TextView>(R.id.txtView2)
         val btn1 = findViewById<Button>(R.id.btn1)
         val receivedText = intent.getStringExtra("textToDisplay")
         txtV1.text = receivedText

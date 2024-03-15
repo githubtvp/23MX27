@@ -17,53 +17,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cddd5cda-f5ec-41ed-b0bb-0e8e1dbdf58b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/migrations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/androidTest/java/com/example/ex2qsn2/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/java/com/example/ex2qsn2/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/drawable/star.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/test/java/com/example/ex2qsn2/ExampleUnitTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2Qsn2/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex2/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex2/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex2/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex2/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/androidTest/java/com/example/searchview1/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/java/com/example/searchview1/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/java/com/example/searchview1/MainActivityCopy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/drawable/searchview_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/app/src/test/java/com/example/searchview1/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SearchView1/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/java/com/example/ex2qsn2/MainActivity2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/java/com/example/ex2qsn2/MainActivity2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex2Qsn2/app/src/main/res/layout/activity_main2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LogIn/app/src/main/res/layout/activity_success_log_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LogIn/app/src/main/res/layout/activity_success_log_in.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +76,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RZ8N91G0KQT]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\tvp16\.android\avd\Pixel_3a_API_34_extension_level_7_x86_64.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -126,17 +128,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tvp16/Desktop/23MX27/AndroidStudioProjects/Ps1.qs2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/tvp16/Desktop/23MX27/AndroidStudioProjects/Ps1.Qsn1"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="qs2.app.main" />
