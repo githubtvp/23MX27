@@ -10,14 +10,17 @@ import android.widget.ListView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+
+  //  private lateinit var binding: ActivityLoginPageBinding
+
     var array = arrayOf("MCA","MBA","ME","M.SC","BE","BTech","B.Sc")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val l:ListView = findViewById<ListView>(R.id.l1)
+       // setContentView(R.layout.activity_main)
+        val lv:ListView = findViewById<ListView>(R.id.lv1)
         val arrayAdapter : ArrayAdapter<*> = ArrayAdapter(this, android.R.layout.simple_selectable_list_item/*simple_list_item_checked*/, array)
-        l.adapter = arrayAdapter
-        l.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+        lv.adapter = arrayAdapter
+        lv.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
             val i = l.getItemAtPosition(position) as String
             Toast.makeText(applicationContext,"Position : $position\nItem Value:$i", Toast.LENGTH_LONG).show()
         }
