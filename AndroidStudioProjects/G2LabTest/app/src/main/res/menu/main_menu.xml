@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/ViewContact" android:title="Contacts"/>
+    <item android:id="@+id/Playmusic" android:title="Music" />
+    <item android:id="@+id/GiveFeeback" android:title="Feeback"/>
+
+</menu>
