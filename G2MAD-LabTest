@@ -1,0 +1,461 @@
+Manifest file:
+<uses-feature
+ android:name="android.hardware.telephony"
+ android:required="false" />
+
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+<uses-permission android:name="android.permission.CALL_PHONE" />
+-----------------------------------------------------------------------------
+Activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity">
+
+ <TextView
+ android:id="@+id/menutext"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:gravity="top"
+ android:text="Menu"
+ android:textSize="30dp"
+ app:layout_constraintBottom_toBottomOf="parent"
+ app:layout_constraintEnd_toEndOf="parent"
+ app:layout_constraintHorizontal_bias="0.952"
+ app:layout_constraintStart_toStartOf="parent"
+ app:layout_constraintTop_toTopOf="parent"
+ app:layout_constraintVertical_bias="0.037" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+---------------------------------------------------------------------------
+To create menu.xml
+RightClick on res -> Android Resources File -> Resource type = menu 
+RightClick on menu -> menu Resource file -> file name
+---------------------------------------------------------------------------
+MainActivity.kt
+package com.example.madlabtest
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.ContextMenu
+import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+ override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main)
+ var menuText = findViewById<TextView>(R.id.menutext)
+ registerForContextMenu(menuText)
+ }
+
+ override fun onCreateContextMenu(
+ menu: ContextMenu?,
+ v: View?,
+ menuInfo: ContextMenu.ContextMenuInfo?
+ ) {
+ super.onCreateContextMenu(menu, v, menuInfo)
+
+ menuInflater.inflate(R.menu.main_main,menu)
+ menu?.setHeaderTitle("Select")
+ }
+
+ override fun onContextItemSelected(item: MenuItem): Boolean {
+ val i : Int = item.itemId
+ when(i)
+ {
+ R.id.ViewContact ->
+ {
+ viewContact()
+ }
+ R.id.Playmusic ->
+ {
+ playMusic()
+ }
+ R.id.GiveFeeback ->
+ {
+ giveFeeback()
+ }
+ }
+
+ return super.onContextItemSelected(item)
+ }
+
+ private fun giveFeeback() {
+ val i = Intent(this,MainActivity4::class.java)
+ startActivity(i)
+ }
+
+ private fun playMusic() {
+ val i = Intent(this, MainActivity3::class.java)
+ startActivity(i)
+ }
+
+ private fun viewContact() {
+ val i = Intent(this , MainActivity2::class.java)
+ startActivity(i)
+ }
+}
+
+-----------------------------------------------------------------------------------
+main_menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <item android:id="@+id/ViewContact"
+ android:title="Contacts"/>
+ <item android:id="@+id/Playmusic"
+ android:title="Music" />
+ <item android:id="@+id/GiveFeeback"
+ android:title="Feeback"/>
+</menu>
+-----------------------------------------------------------------------------------
+
+Activity_main2.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:orientation="vertical"
+ tools:context=".MainActivity2">
+
+ <TextView
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:text="My Contacts"
+ android:gravity="center"
+ android:id="@+id/mycontact"
+ android:textSize="30dp"
+ android:background="@color/black"
+ android:textColor="@color/white"
+ />
+ <ListView
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:id="@+id/ContactLists"
+ />
+</LinearLayout>
+
+-----------------------------------------------------------------------------------------
+
+MainActivity2.kt
+package com.example.madlabtest
+
+import android.content.ContentResolver
+import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.content.pm.PackageManager
+import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.provider.ContactsContract
+import android.util.Log
+import android.widget.ListView
+import android.widget.SimpleCursorAdapter
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.*
+
+class MainActivity2 : AppCompatActivity() {
+ var column = listOf<String>(
+ ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+ ContactsContract.CommonDataKinds.Phone.NUMBER,
+ ContactsContract.CommonDataKinds.Phone._ID
+ ).toTypedArray()
+ override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main2)
+
+ if(checkSelfPermission(this,android.Manifest.permission.READ_CONTACTS)!= PackageManager.PERMISSION_GRANTED)
+ {
+ ActivityCompat.requestPermissions(this, Array(1)
+ {
+ android.Manifest.permission.READ_CONTACTS
+ },111)
+ } else {
+ readContact()
+ }
+ }
+
+ override fun onRequestPermissionsResult(
+ requestCode: Int,
+ permissions: Array<out String>,
+ grantResults: IntArray
+ ) {
+ super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+ if(requestCode == 111 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+ readContact()
+ }
+ private fun readContact() {
+ var from = listOf<String>(
+ ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+ ContactsContract.CommonDataKinds.Phone.NUMBER,
+ ContactsContract.CommonDataKinds.Phone._ID
+ ).toTypedArray()
+ var to = intArrayOf(android.R.id.text1, android.R.id.text2)
+ var list = findViewById<ListView>(R.id.ContactLists)
+ var c: ContentResolver = contentResolver
+ var s = c.query(
+ ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+ column,
+ null,
+ null,
+ ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME
+ )
+ Log.i("Contacts" , s!!.count.toString())
+ while(s.moveToNext()){
+ var s1:String = s.getString(0)
+ var s2:String = s.getString(1)
+ Log.i("Contacts",s1+s2)
+ }
+ val a = SimpleCursorAdapter(
+ this,
+ android.R.layout.simple_list_item_2,
+ s,
+ from,
+ to,
+ 0
+ )
+ list.adapter = a
+
+ list.setOnItemClickListener { _, _, position, _ ->
+ if(s.moveToPosition(position)){
+ val phoneNumberIndex = s.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
+ if(phoneNumberIndex != -1){
+ val phoneNumber = s.getString(phoneNumberIndex)
+ makePhoneCall(phoneNumber)
+ } else {
+ Log.e("read","Phone number column not found")
+ }
+ } else {
+ Log.e("ReadContacts","Failed to move cursor to position $position")
+ }
+ }
+ }
+
+ private fun makePhoneCall(phoneNumber: String?) {
+ val callIntent = Intent(Intent.ACTION_CALL)
+ callIntent.data = Uri.parse("tel: $phoneNumber")
+ if(ActivityCompat.checkSelfPermission(
+ this,
+ android.Manifest.permission.CALL_PHONE
+ ) == PackageManager.PERMISSION_GRANTED)
+ {
+ startActivity(callIntent)
+ } else {
+ ActivityCompat.requestPermissions(
+ this,
+ arrayOf(android.Manifest.permission.CALL_PHONE),
+ 111
+ )
+ }
+ }
+}
+
+---------------------------------------------------------------------------------------
+
+Activity_main3.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:orientation="vertical"
+ tools:context=".MainActivity3">
+
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/btnS"
+ android:onClick="start"
+ android:text="Start Service" />
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/BtnStop"
+ android:onClick="stop"
+ android:text="Stop Service"/>
+</LinearLayout>
+
+-----------------------------------------------------------------------------
+
+MainActivity3.kt
+package com.example.madlabtest
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.content.Intent
+
+class MainActivity3 : AppCompatActivity() {
+ override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main3)
+ }
+ fun start(view: View?){
+ startService(Intent(this,MyService::class.java))
+ }
+ fun stop(view: View?){
+ stopService(Intent(this,MyService::class.java))
+ }
+}
+
+---------------------------------------------------------------------------------------
+
+
+To Create a Service
+File-> new -> Service -> Service 
+MyService.kt
+package com.example.madlabtest
+
+import android.app.Service
+import android.content.Intent
+import android.media.MediaPlayer
+import android.os.IBinder
+import android.provider.Settings
+import android.widget.Toast
+
+class MyService : Service() {
+ private lateinit var player : MediaPlayer
+
+ override fun onBind(intent: Intent): IBinder {
+ TODO("Return the communication channel to the service.")
+ }
+
+ override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+ player = MediaPlayer.create(this,Settings.System.DEFAULT_RINGTONE_URI)
+ player.isLooping = true
+ player.start()
+ Toast.makeText(this,"Service Started",Toast.LENGTH_LONG).show()
+ return START_STICKY
+ }
+ override fun onDestroy(){
+ super.onDestroy()
+ player.stop()
+ Toast.makeText(this,"Service Stopped",Toast.LENGTH_LONG).show()
+
+ }
+}
+
+----------------------------------------------------------------------------------
+
+	Activity_main4.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".MainActivity4"
+ android:background="@color/white">
+
+ <LinearLayout
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:orientation="vertical"
+ android:id="@+id/commontext"
+ android:gravity="start"
+ >
+ <TextView
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:textColor="#504949"
+ android:textAlignment="center"
+ android:textSize="24dp"
+ android:layout_marginTop="20dp"
+ android:layout_marginLeft="30dp"
+ android:layout_marginRight="30dp"
+ android:text="We hope you enjoyed our App">
+
+ </TextView>
+ </LinearLayout>
+ <EditText
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:layout_below="@id/commontext"
+ android:id="@+id/nametext"
+ android:hint="Name"
+ android:textSize="24dp"/>
+
+ <RatingBar
+ android:id="@+id/ratingBar"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:layout_below="@id/nametext"
+ android:layout_marginLeft="80dp"
+ android:layout_marginTop="20dp"
+ android:numStars="5"
+ android:stepSize="1"
+ android:rating="0"
+ android:progressTint="#59E110"/>
+
+ <Button
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:id="@+id/onsubmit"
+ android:layout_below="@id/ratingBar"
+ android:gravity="center"
+ android:text="Submit"
+ android:layout_marginTop="30dp"
+ />
+</RelativeLayout>
+
+-----------------------------------------------------------------------------------------------
+
+
+MainActivity4.kt
+
+package com.example.madlabtest
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RatingBar
+import android.widget.Toast
+
+
+class MainActivity4 : AppCompatActivity() {
+ lateinit var text : String
+ override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main4)
+
+ var ratingBar = findViewById<RatingBar>(R.id.ratingBar)
+
+ ratingBar.setOnRatingBarChangeListener{_, rating, _ ->
+ val ratingInt = rating.toInt()
+
+ when(ratingInt){
+ 1 -> text = "Disappointed. Very Poor"
+ 2 -> text = "Not good"
+ 3 -> text = "Satisfied"
+ 4 -> text = "Good"
+ 5 -> text = "Awesome"
+ else -> text=""
+ }
+ }
+ val button = findViewById<Button>(R.id.onsubmit)
+ val editText = findViewById<EditText>(R.id.nametext)
+ val name = editText.text
+ button.setOnClickListener(View.OnClickListener{
+ Toast.makeText(applicationContext, "name $name Rating $text",Toast.LENGTH_LONG).show()
+ })
+ }
+}
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
