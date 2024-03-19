@@ -25,6 +25,5 @@ class MyService : Service() {
         super.onDestroy()
         player.stop()
         Toast.makeText(this,"Service Stopped",Toast.LENGTH_LONG).show()
-
     }
 }

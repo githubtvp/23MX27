@@ -27,7 +27,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cb923b1-fdf1-4606-a25b-a42e5631e382" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../BindingExample/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BindingExample/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ContentProviderListViewEx/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ContentProviderListViewEx/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ContentProviderListViewEx/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../ContentProviderListViewEx/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ContentProviderListViewEx/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ContentProviderListViewEx/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../G2LabTest/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../G2LabTest/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../G2LabTest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../G2LabTest/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../G2LabTest/app/src/main/java/com/example/g2labtest/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../G2LabTest/app/src/main/java/com/example/g2labtest/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../G2LabTest/app/src/main/java/com/example/g2labtest/MyService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../G2LabTest/app/src/main/java/com/example/g2labtest/MyService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,30 +62,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Ex2Qsn2" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Ex2Qsn2" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Ex2Qsn2" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Ex2Qsn2" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -84,6 +72,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2d49Z5o0E0UBgvUa4bxGmIZHphQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -91,12 +83,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/Varadha/Desktop/23MX27/AndroidStudioProjects/G2LabTest"
+    "last_opened_file_path": "C:/Users/Varadha/Desktop/23MX27/AndroidStudioProjects/ListViewSelect"
   }
 }]]></component>
   <component name="RunManager">

@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/peach"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/editTextText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:text="Search Text"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextText"
+        android:layout_marginTop="16dp"
+        android:hint="Search for a text"
+        android:textColorHint="@color/grey"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textViewText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSearch"
+        android:layout_marginTop="16dp"
+        android:text="Paragraph of text goes here"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

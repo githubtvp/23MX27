@@ -47,7 +47,10 @@ class MainActivity : AppCompatActivity() {
 
         return super.onContextItemSelected(item)
     }
-
+    private fun viewContact() {
+        val i = Intent(this , MainActivity2::class.java)
+        startActivity(i)
+    }
     private fun giveFeeback() {
         val i = Intent(this,MainActivity4::class.java)
         startActivity(i)
@@ -55,11 +58,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun playMusic() {
         val i = Intent(this, MainActivity3::class.java)
-        startActivity(i)
-    }
-
-    private fun viewContact() {
-        val i = Intent(this , MainActivity2::class.java)
         startActivity(i)
     }
 }
