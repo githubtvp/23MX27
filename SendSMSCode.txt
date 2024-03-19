@@ -1,0 +1,77 @@
+The provided code is focused on reading SMS messages. There isn't any code within this snippet that sends SMS messages. It requests permission to receive SMS messages (Manifest.permission.RECEIVE_SMS) and then sets up a BroadcastReceiver to listen for incoming SMS messages.
+
+If you want to include the functionality to send SMS messages, you would need to add code for that purpose separately. It would typically involve using the SmsManager class or other related APIs to send SMS messages.
+
+User
+can you show how to send sms
+ChatGPT
+Certainly! Below is an example of how you can send an SMS message in Android using the SmsManager class:
+
+kotlin
+Copy code
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Bundle
+import android.telephony.SmsManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Check for SMS permission
+        if (ContextCompat.checkSelfPermission(
+                this@MainActivity,
+                Manifest.permission.SEND_SMS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // Request permission to send SMS
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.SEND_SMS),
+                PERMISSION_SEND_SMS_CODE
+            )
+        } else {
+            // Permission already granted, send SMS
+            sendMessage("1234567890", "Hello, this is a test message!")
+        }
+    }
+
+    // Handle permission request result
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == PERMISSION_SEND_SMS_CODE && grantResults.isNotEmpty() &&
+            grantResults[0] == PackageManager.PERMISSION_GRANTED
+        ) {
+            // Permission granted, send SMS
+            sendMessage("1234567890", "Hello, this is a test message!")
+        }
+    }
+
+    // Function to send SMS
+    private fun sendMessage(phoneNumber: String, message: String) {
+        val smsManager: SmsManager = SmsManager.getDefault()
+        smsManager.sendTextMessage(phoneNumber, null, message, null, null)
+    }
+
+    companion object {
+        private const val PERMISSION_SEND_SMS_CODE = 111
+    }
+}
+In this example:
+
+The sendMessage function takes a phone number and a message as parameters and sends the SMS using the SmsManager.
+In the onCreate method, it checks if the app has the SEND_SMS permission. If not, it requests the permission from the user. If the permission is already granted, it directly sends the SMS.
+In the onRequestPermissionsResult method, it handles the result of the permission request. If the permission is granted, it proceeds to send the SMS.
+
+
+
+

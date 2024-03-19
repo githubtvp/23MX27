@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<!--    <uses-feature android:name="android.hardware.telephony"  android:required="false" />-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <uses-feature android:name="android.hardware.telephony" />
+
     <queries>
         <package android:name="com.whatsapp" />
         <package android:name="com.whatsapp.w4b" />
@@ -20,22 +24,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MenuAndCall"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".main_menu"-->
-<!--            android:exported="false" />-->
-
-<!--        <service-->
-<!--            android:name=".MyService2"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true"></service>-->
-<!--        <service-->
-<!--            android:name=".MyService"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true" />-->
-
-<!--        <activity-->
-<!--            android:name=".MainActivity2"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".SMSActivity"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".main_menu" -->
+        <!-- android:exported="false" /> -->
+        <!-- <service -->
+        <!-- android:name=".MyService2" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true"></service> -->
+        <!-- <service -->
+        <!-- android:name=".MyService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".MainActivity2" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
