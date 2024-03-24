@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/item1"
-        android:title="Call"/>
-    <item android:id="@+id/item2"
-        android:title="SMS" />
-    <item android:id="@+id/item3"
-        android:title="WhatsApp"/>
+    <item android:id="@+id/Call" android:title="Call"/>
+    <item android:id="@+id/SMS" android:title="SMS" />
+    <item android:id="@+id/WhatsApp" android:title="WhatsApp"/>
 </menu>

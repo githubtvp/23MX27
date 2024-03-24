@@ -35,20 +35,51 @@ class MainActivity : AppCompatActivity() {
         val i:Int = item.itemId
         when(i)
         {
-            R.id.item1 ->
+            R.id.Call ->
             {
-                start()
+                startCall()
             }
-            R.id.item2 ->
+            R.id.SMS ->
             {
+                SMS()
             }
-            R.id.item3 ->
+            R.id.WhatsApp ->
             {
                 whatsapp()
             }
         }
         return super.onContextItemSelected(item)
     }
+    private fun startCall() {
+        if (ContextCompat.checkSelfPermission(this@MainActivity,
+                Manifest.permission.CALL_PHONE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(this,
+                Array(1){Manifest.permission.CALL_PHONE},111)
+        } else {
+            startActivity(c)
+        }
+    }
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions,
+            grantResults)
+        if(requestCode==111 &&
+            grantResults[0]==PackageManager.PERMISSION_GRANTED)
+            startActivity(c)
+    }
+
+    private fun SMS()
+    {
+        val intent = Intent(this, SMSActivity::class.java)
+        startActivity(intent)
+    }
+
+
     private fun whatsapp() {
         val installed: Boolean = appInstalledOrNot("com.whatsapp")
         if(installed)
@@ -75,26 +106,5 @@ class MainActivity : AppCompatActivity() {
         }
         return app_installed
     }
-    private fun start() {
-        if (ContextCompat.checkSelfPermission(this@MainActivity,
-                Manifest.permission.CALL_PHONE
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(this,
-                Array(1){Manifest.permission.CALL_PHONE},111)
-        } else {
-            startActivity(c)
-        }
-    }
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions,
-            grantResults)
-        if(requestCode==111 &&
-            grantResults[0]==PackageManager.PERMISSION_GRANTED)
-            startActivity(c)
-    }
+
 }
